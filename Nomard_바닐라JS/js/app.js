@@ -1,14 +1,17 @@
 const loginForm = document.querySelector("#login-form")
 const loginInput = loginForm.querySelector("#login-form input");
-// const loginBtn = loginForm.querySelector('#login-form input');
+const greeting = document.querySelector('#greeting');
 
-function onLoginSubmit(tomato) {
-    tomato.preventDefault();
+function onLoginSubmit(event) {
+    event.preventDefault();
     const userName = loginInput.value;
-    console.log(tomato)
+    loginForm.classList.add('hidden');
+    greeting.innerText = `Hello ${userName}!!`;
+    greeting.classList.remove('hidden');
+    console.log(userName)
 }
 
-loginInput.addEventListener('submit', onLoginSubmit);
+loginForm.addEventListener('submit', onLoginSubmit);
 
 
-console.log(loginInput);
+
