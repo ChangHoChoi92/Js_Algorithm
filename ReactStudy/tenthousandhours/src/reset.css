@@ -1,0 +1,41 @@
+/* reset */
+body,
+header,
+footer,
+section,
+div,
+img,
+h1,
+h2,
+h3,
+dt,
+dd,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font: inherit;
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

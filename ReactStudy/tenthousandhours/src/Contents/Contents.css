@@ -1,0 +1,123 @@
+.contents-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intro {
+    color: #F5DF4D;
+    text-align: center;
+    font-family: 'tvN Enjoystories';
+    font-size: 36px;
+    margin-bottom: 78px;
+}
+
+.intro-saying {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 102px;
+}
+
+.intro-saying p {
+    color: #FFF;
+    font-family: 'Gmarket Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.intro-saying span {
+    color: #FFF;
+    font-family: 'Gmarket Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.input-wrap {
+    text-align: center;
+    color: #FFF;
+    font-family: 'Gmarket Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input-wrap input {
+    width: 228px;
+    height: 57px;
+    border-radius: 7px;
+    margin: 0 17px 0 17px;
+
+}
+
+.input-one input {
+    margin-bottom: 27px;
+}
+
+.output-wrap {
+    margin-top: 115px;
+    margin-bottom: 147px;
+}
+
+.output-wrap button {
+    color: #5B2386;
+    text-align: center;
+    font-family: 'Gmarket Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 56px;
+    background: #FCEE21;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+    padding: 21px 49px;
+}
+
+.result-wrap {
+    text-align: center;
+    color: #FFF;
+    font-family: Gmarket Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.result-wrap span {
+    color: #FFF;
+    font-family: 'Gmarket Sans';
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.btn-modal-wrap {
+    margin: 130px 130px;
+}
+
+.btn-modal-wrap button {
+    color: #FFF;
+    font-family: 'Gmarket Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #5B2386;
+    text-align: center;
+    font-family: 'Gmarket Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 56px;
+    background: #FCEE21;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
+    padding: 21px 49px;
+}

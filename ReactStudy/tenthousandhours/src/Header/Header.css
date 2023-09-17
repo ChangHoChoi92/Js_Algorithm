@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 140px;
+    margin-bottom: 66px;
+}
+
+.header .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .img-clock {
+    position: relative;
+    width: 265px;
+    height: 265px;
+}
+
+.header .img-title {
+    position: absolute;
+    width: 564px;
+    height: 112px;
+}
