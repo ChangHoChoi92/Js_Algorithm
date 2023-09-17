@@ -49,10 +49,12 @@
 }
 
 .input-wrap input {
-    width: 228px;
-    height: 57px;
+    /* width: 228px;
+    height: 57px; */
+    padding: 15px 20px;
     border-radius: 7px;
     margin: 0 17px 0 17px;
+    font-size: 20px;
 
 }
 
