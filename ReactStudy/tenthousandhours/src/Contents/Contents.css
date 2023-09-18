@@ -55,7 +55,6 @@
     border-radius: 7px;
     margin: 0 17px 0 17px;
     font-size: 20px;
-
 }
 
 .input-one input {
@@ -122,4 +121,53 @@
     background: #FCEE21;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
     padding: 21px 49px;
+}
+
+@media (min-width: 451px) and (max-width: 767px) {
+    .intro {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .intro-saying span {
+        font-size: 20px;
+    }
+
+    .input-wrap {
+        font-size: 20px;
+    }
+
+    .input-wrap input {
+        width: 170px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .intro {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+
+    .intro-saying p {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 0 35px;
+    }
+
+    .intro-saying span {
+        font-size: 14px;
+    }
+
+    .input-wrap {
+        font-size: 14px;
+    }
+
+    .input-wrap input {
+        padding: 10px 15px;
+        margin: 0 10px;
+        font-size: 15px;
+        width: 100px;
+    }
+
 }

@@ -22,3 +22,27 @@
     width: 564px;
     height: 112px;
 }
+
+@media (min-width: 451px) and (max-width: 767px) {
+    .header .img-clock {
+        width: 180px;
+        height: 180px;
+    }
+
+    .header .img-title {
+        width: 430px;
+        height: 85px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header .img-clock {
+        width: 125px;
+        height: 125px;
+    }
+
+    .header .img-title {
+        width: 267px;
+        height: 53px;
+    }
+}
