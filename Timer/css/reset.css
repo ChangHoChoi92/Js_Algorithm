@@ -1,0 +1,50 @@
+/* reset */
+body,
+header,
+footer,
+section,
+div,
+img,
+h1,
+h2,
+h3,
+dt,
+dd,
+p,
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+input,
+button {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    background: none;
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
