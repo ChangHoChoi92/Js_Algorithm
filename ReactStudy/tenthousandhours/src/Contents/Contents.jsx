@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './Contents.css'
 import Modal from '../Modal/Modal';
 // import JobInput from './JobInput';
 // import JobResult from './JobResult';
 
 export default function Contents() {
+
+    // useRef를 이용
+    const field = useRef(null);
+    const time = useRef(null);
 
     const [modalShow, setModalShow] = useState(false);
     const [jobName, setJobName] = useState("");
@@ -21,15 +25,34 @@ export default function Contents() {
         setModalShow(true);
     };
 
-    const btnChange = () => {
-        if (jobName && hour && hour > 0 && hour < 24) {
-            const div = Math.ceil(10000 / hour)
-            setShowResult(true);
-            setresultJob(jobName);
-            setResultTime(div);
-        } else {
-            alert("입력 값을 다시 한번 확인해주세요.")
+    //useState를 이용해서 처리
+    // const btnChange = () => {
+    //     if (jobName && hour && hour > 0 && hour < 24) {
+    //         const div = Math.ceil(10000 / hour)
+    //         setShowResult(true);
+    //         setresultJob(jobName);
+    //         setResultTime(div);
+    //     } else {
+    //         alert("입력 값을 다시 한번 확인해주세요.")
+    //     }
+    // }
+
+    // useRef를 이용하여 처리(실시간으로 동기화를 할 필요가 없기 때문)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (field.current.value === "") {
+            alert("전문가 이름을 입력해주세요");
+            field.current.focus();
+            return;
+        } else if (time.current.value === "") {
+            alert("시간을 입력해주세요");
+            time.current.focus();
+            return;
         }
+        setresultJob(field.current.value);
+        setResultTime(Math.ceil(10000 / time.current.value));
+        setShowResult(true);
     }
 
     return (
@@ -47,22 +70,25 @@ export default function Contents() {
                 </div>
 
                 <div className='input-wrap'>
-                    {/* <form onSubmit={handleSubmit}> */}
-                    <p className='input-one'>나는
-                        <input type="text" placeholder='예)프로그래밍' onChange={(e) => { setJobName(e.target.value) }} />
-                        {/* <input type="text" name='jobName' onChange={(e) => { setResult({ ...result, jobName: e.target.value }) }} placeholder='예)프로그래밍' /> */}
-                        전문가가 될 것이다.
-                    </p>
-                    <p className='input-two'>
-                        그래서 앞으로 매일 하루에
-                        <input type="number" placeholder='예)5' onChange={(e) => { setHour(e.target.value) }} />
-                        {/* <input type="number" name='hour' onChange={(e) => { setResult({ ...result, hour: e.target.value }) }} placeholder='예)5' /> */}
-                        시간씩 훈련할 것이다.
-                    </p>
-                    <div className='output-wrap'>
-                        <button onClick={btnChange}>나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
-                    </div>
-                    {/* </form> */}
+                    <form onSubmit={handleSubmit}>
+                        <p className='input-one'>나는
+                            <input type="text" placeholder='예)프로그래밍' ref={field} />
+                            {/* <input type="text" placeholder='예)프로그래밍' onChange={(e) => { setJobName(e.target.value) }} /> */}
+                            {/* <input type="text" name='jobName' onChange={(e) => { setResult({ ...result, jobName: e.target.value }) }} placeholder='예)프로그래밍' /> */}
+                            전문가가 될 것이다.
+                        </p>
+                        <p className='input-two'>
+                            그래서 앞으로 매일 하루에
+                            <input type="number" placeholder='예)5' ref={time} />
+                            {/* <input type="number" placeholder='예)5' onChange={(e) => { setHour(e.target.value) }} /> */}
+                            {/* <input type="number" name='hour' onChange={(e) => { setResult({ ...result, hour: e.target.value }) }} placeholder='예)5' /> */}
+                            시간씩 훈련할 것이다.
+                        </p>
+                        <div className='output-wrap'>
+                            {/* <button onClick={btnChange}>나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button> */}
+                            <button type='submit'>나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
+                        </div>
+                    </form>
                 </div>
                 {showResult &&
                     <div className='result-wrap'>
