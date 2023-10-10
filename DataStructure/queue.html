@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>queue</title>
+</head>
+
+<body>
+    <script>
+        let start = Date.now();
+
+        const result = (x) => {
+            console.log(`${x} 실행되는데 걸리는 시간: ${Date.now() - start}`);
+        }
+
+        const blocking = () => {
+            let i = 0;
+            while (i < 9999999) {
+                i++;
+            }
+            // return console.log("blocking finished");
+        }
+
+        const asyncBlocking = () => {
+            return new Promise((resolve) => {
+                blocking();
+                resolve('asyncBlocking finished !');
+            })
+        }
+
+        // 1 실행순서 => 1
+        result('동기적실행코드1');
+
+        // 2 실행순서 => 2
+        blocking();
+
+        // 3 실행순서 => 4
+        setTimeout(() => {
+            result('setTimeout 종료');
+        }, 0);
+
+        // 4 실행순서 => 2
+        result('동기적실행코드2');
+
+        // 5 실행순서 => 3
+        asyncBlocking().then((txt) => {
+            result(txt);
+        });
+    </script>
+</body>
+
+</html>
